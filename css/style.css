@@ -160,7 +160,6 @@ position: relative;
 	display: flex;
 	justify-content: space-between;
 	padding-top: 60px;
-	padding-bottom: 100px;
 }
 .skill-item{
 	flex: 0 0 21%;
@@ -219,7 +218,8 @@ top: calc(50% - 53px);
 
 .about{
 display: grid;
-grid-template: 349px / repeat(4, 1fr);
+grid-template: 40% 1fr 1fr / repeat(4, 1fr);
+padding-top: 100px;
 }
 .about-title{
 	grid-column: 1/3;
