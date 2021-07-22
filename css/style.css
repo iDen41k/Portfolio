@@ -23,11 +23,15 @@ body {
 .dark .social,
 .dark .steps-item,
 .dark .about-title,
-.dark .about-description {
+.dark .about-description,
+.dark .tarif-title,
+.dark .tarif-description,
+.dark .tarif-item,
+.dark .work {
 	border-bottom: 1px solid #F3F2F0;
 }
 .dark .advantages{
-	border-top: 1px solid #010101;
+	border-top: 1px solid #F3F2F0;
 }
 .dark .steps-item:first-child {
 	border-top: 1px solid #F3F2F0;
@@ -44,6 +48,30 @@ body {
 }
 .dark .advantages-image path{
 	fill: #F3F2F0;
+}
+.dark .tarif-list-item::before{
+	content: "";
+	background-color: #F3F2F0;
+}
+.dark .tech-item:first-child,
+.dark .tech-item:nth-child(5){
+	border-left: 1px solid rgba(243, 242, 240, 0.3);
+}
+.dark .html,
+.dark .css,
+.dark .js,
+.dark .jquery{
+	border-top: 1px solid rgba(243, 242, 240, 0.3);
+}
+.dark .tech-item{
+	border-bottom: 1px solid rgba(243, 242, 240, 0.3);
+	border-right: 1px solid rgba(243, 242, 240, 0.3);
+}
+.dark .project-img{
+	background-image: url(/img/Arrow\ dark.svg);
+}
+.dark .project:hover{
+	border-bottom: 2px solid #F3F2F0;
 }
 /* =====================Dark theme==============================================*/
 
@@ -68,7 +96,11 @@ body {
 .light .social, 
 .light .steps-item,
 .light .about-title,
-.light .about-description {
+.light .about-description,
+.light .tarif-title,
+.light .tarif-description,
+.light .tarif-item,
+.light .work {
 	border-bottom: 1px solid #010101;
 }
 .light .advantages{
@@ -89,6 +121,30 @@ body {
 }
 .light .advantages-image path{
 	fill: #010101;
+}
+.light .tarif-list-item::before{
+	content: "";
+	background-color: #010101;
+}
+.light .tech-item{
+	border-bottom: 1px solid rgba(1, 1, 1, 0.3);
+	border-right: 1px solid rgba(1, 1, 1, 0.3);
+}
+.light .tech-item:first-child,
+.light .tech-item:nth-child(5){
+	border-left: 1px solid rgba(1, 1, 1, 0.3);
+}
+.light .html,
+.light .css,
+.light .js,
+.light .jquery{
+	border-top: 1px solid rgba(1, 1, 1, 0.3);
+}
+.light .project-img{
+	background-image: url(/img/arrow1.svg);
+}
+.light .project:hover{
+	border-bottom: 2px solid #010101;
 }
 /* =====================Light theme=============================================*/
 
@@ -219,14 +275,11 @@ position: relative;
 	transition: 0.2s border-bottom ease;
 	border-bottom: 2px solid transparent;
 }
-.project:hover{
-	border-bottom: 2px solid #010101;
-}
+
 .project-img{
 	width: 16px;
 	height: 12px;
 	display: block;
-	background-image: url(/img/arrow1.svg);
 	margin-left: 15px;
 }
 .skill{
@@ -290,6 +343,20 @@ height: 106px;
 position: absolute;
 right: 38px;
 top: calc(50% - 60px);
+}
+.circle-tarif{
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	left: -80px;
+	top: calc(50% - 70px);
+}
+.circle-price{
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: -36px;
+	top: calc(50% - 45px);
 }
 .section-about{
 	padding-top: 112px;
@@ -391,7 +458,6 @@ outline: none;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-bottom: 1px solid #010101;
 	padding-top: 67px;
 	padding-bottom: 58px;
 }
@@ -441,7 +507,7 @@ outline: none;
 }
 .section-advantages{
 	padding-top: 152px;
-	padding-bottom: 100px;
+	padding-bottom: 180px;
 }
 .advantages-text{
 	font-size: 28px;
@@ -483,19 +549,9 @@ outline: none;
 	text-align: center;
 }
 .tech-item{
-	border-bottom: 1px solid rgba(1, 1, 1, 0.3);
-	border-right: 1px solid rgba(1, 1, 1, 0.3);
 	display: flex;
 	justify-content: center;
 }
-.tech-item:first-child,
-.tech-item:nth-child(5){
-	border-left: 1px solid rgba(1, 1, 1, 0.3);
-}
-.html,.css,.js,.jquery{
-	border-top: 1px solid rgba(1, 1, 1, 0.3);
-}
-/* .dark.tech-item{border-bottom: 1px solid rgba(243, 242, 240, 0.3);} */
 
 .tech-image{
 	filter: grayscale(100%);
@@ -532,10 +588,17 @@ outline: none;
 }
 .tarif{
 	display: grid;
-	grid-template: repeat(4, 1fr) / 1fr 1fr;	
+	grid-template-columns: 1fr 1fr;	
+}
+.section-tarif{
+	padding-top: 150px;
 }
 .tarif-item{
-	border-bottom: 1px solid #010101;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 299px;
+	padding-bottom: 63px;
 }
 .tarif-item:last-child,
 .tarif-item:nth-child(7){
@@ -547,19 +610,31 @@ outline: none;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 }
+.tarif-title > div{
+	position: relative;
+}
+.tarif-title p{
+	position: relative;
+	z-index: 1;
+	padding-top: 5px;
+}
 .tarif-description{
 	font-size: 28px;
 	line-height: 150%;
 	opacity: 0.8;
+	padding-bottom: 51px;
 }
 .tarif-name{
 	font-size: 28px;
 	line-height: 150%;
+	padding-top: 32px;
+	margin-bottom: 0;
 }
 .tarif-text{
 	font-size: 16px;
 	line-height: 150%;
 	opacity: 0.8;
+	padding-top: 2px;
 }
 .tarif .project{
 	display: inline-flex;
@@ -568,23 +643,25 @@ outline: none;
 	font-size: 16px;
 	line-height: 150%;
 	font-weight: 700;
+	margin-top: 60px;
+	margin-bottom: 28px;
 }
 .tarif-list{
 	list-style-type: none;
+	font-size: 16px;
 	padding-left: 0;
 	margin: 0;
 }
 .tarif-list-item{
 	position: relative;
-	padding-left: 30px;
-	margin-bottom: 10px;
+	padding-left: 15px;
+	margin-bottom: 13px;
 }
 .tarif-list-item::before{
 	content: "";
 	display: block;
 	width: 4px;
 	height: 4px;
-	background-color: #010101;
 	border-radius: 100%;
 	position: absolute;
 	left: 0;
@@ -594,4 +671,12 @@ outline: none;
 	font-weight: 700;
 	font-size: 42px;
 	line-height: 150%;
+}
+.tarif-footer{
+	position: relative;
+}
+.tarif-footer p {
+	position: relative;
+	z-index: 1;
+	margin: 0;
 }
