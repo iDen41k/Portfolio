@@ -84,6 +84,17 @@ body {
 .dark .ui-menu .ui-menu-item:hover {
 	color: #F3F2F0;
 }
+.dark .footer-bottom p {
+	color: rgba(243, 242, 240, 0.5);
+}
+.dark .footer-link {
+	color: rgba(243, 242, 240, 0.5);
+	border-bottom: 1px solid rgba(243, 242, 240, 0.3);
+}
+.dark .footer-link:hover {
+	color: rgba(243, 242, 240, 1);
+	border-bottom: 1px solid rgba(243, 242, 240, 1);
+}
 /* =====================Dark theme==============================================*/
 
 /* =====================Light theme=============================================*/
@@ -177,6 +188,17 @@ body {
 }
 .light .ui-menu .ui-menu-item:hover {
 	color: #010101;
+}
+.light .footer-bottom p {
+	color: rgba(1, 1, 1, 0.3);
+}
+.light .footer-link {
+	color: rgba(1, 1, 1, 0.3);
+	border-bottom: 1px solid rgba(1, 1, 1, 0.3);;
+}
+.light .footer-link:hover {
+	color: rgba(1, 1, 1, 1);
+	border-bottom: 1px solid rgba(1, 1, 1, 1);
 }
 /* =====================Light theme=============================================*/
 
