@@ -692,6 +692,7 @@ button.ui-button::-moz-focus-inner {
 	overflow-x: hidden;
 	padding-bottom: 1px;
 }
+
 .ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
 	font-size: 1em;
 	font-weight: bold;
